@@ -2,4 +2,94 @@
 
 ---
 
-<!-- Her skal der laves en Countdown component til forsidens herostykke. -->
+<div class="countdown">
+  <div class="time-section">
+    <div id="days" class="time">00</div>
+    <span class="label">Dage</span>
+  </div>
+  <div class="time-section">
+    <div id="hours" class="time">00</div>
+    <span class="label">Timer</span>
+  </div>
+  <div class="time-section">
+    <div id="minutes" class="time">00</div>
+    <span class="label">Minutter</span>
+  </div>
+  <div class="time-section">
+    <div id="seconds" class="time">00</div>
+    <span class="label">Sekunder</span>
+  </div>
+</div>
+
+<style>
+  .countdown {
+    font-size: 5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .time-section {
+    text-align: center;
+  }
+
+  .time {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 10px;
+    animation: pop 0.3s ease-in-out;
+  }
+
+  .label {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  @keyframes pop {
+    0% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Sæt slutdatoen for nedtællingen
+  const countdownDate = new Date("August 22, 2025 00:00:00").getTime();
+
+  // Opdater nedtællingen hvert sekund
+  const countdownFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    // Beregn dage, timer, minutter og sekunder
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Opdater HTML-indhold
+    document.getElementById("days").innerText = days
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("hours").innerText = hours
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("minutes").innerText = minutes
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("seconds").innerText = seconds
+      .toString()
+      .padStart(2, "0");
+
+    // Hvis nedtællingen er færdig, stop nedtællingen
+    if (distance < 0) {
+      clearInterval(countdownFunction);
+      document.querySelector(".countdown").innerHTML = "Countdown Finished!";
+    }
+  }, 1000);
+</script>

@@ -3,8 +3,22 @@
 ---
 
 <!-- Logo knap som er hvid som default og farvekode #B23287 når den er i hover  -->
-<button>
-  <img src="" alt="" />
+<button class="logo-btn">
+  <img src="" alt="Logo" class="logo-img" />
 </button>
 
-<style></style>
+<style>
+  .logo-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+  }
+  .logo-btn:hover .logo-img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(24%) saturate(3900%)
+      hue-rotate(305deg) brightness(96%) contrast(94%);
+  }
+  .logo-img {
+    width: 100px;
+  }
+</style>

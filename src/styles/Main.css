@@ -1,2 +1,4 @@
 /* Her skal den overordnet styling forgå */
-
+* {
+    box-sizing: border-box;
+}

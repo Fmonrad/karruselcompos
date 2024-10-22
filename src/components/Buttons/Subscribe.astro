@@ -2,14 +2,25 @@
 
 ---
 
-<!-- Her skal der laves en Subscribe knap som skal indgå i newletter,
-og evt i en ny og forbedret footer.
+<button class="sub">Subscribe</button>
 
-Den skal have en Standard og en Hover. 
-
-Den skal have 2 størrelser 
-- En stor til Newletter
-- En Lille/mellem til evt footer -->
-<button> </button>
-
-<style></style>
+<style>
+  .sub {
+    background-color: #e91e63;
+    color: white;
+    border: 2px solid #8e24aa;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .sub:hover {
+    box-shadow:
+      0 0 20px rgba(234, 2, 234, 0.8),
+      0 0 40px rgba(73, 105, 246, 0.8),
+      0 0 60px rgba(255, 0, 0, 0.8),
+      0 0 80px rgba(255, 165, 0, 0.8);
+  }
+</style>
