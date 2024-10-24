@@ -1,0 +1,52 @@
+---
+import Logobutton from "../Buttons/Logobutton.astro";
+import Tricketbutton from "../Buttons/Tricketbutton.astro";
+import Burgermenu from "../Navgation/Burgermenu.astro";
+---
+
+<header>
+  <div class="header-container">
+    <div class="left-items"></div>
+    <!-- Tomt element for at centralisere logoet -->
+    <div class="center-logo">
+      <Logobutton />
+    </div>
+    <div class="right-items">
+      <Tricketbutton />
+      <Burgermenu />
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Gør hele headeren til en flex container */
+  .header-container {
+    display: flex;
+    justify-content: space-between; /* Placerer elementer til venstre og højre */
+    align-items: center; /* Centrerer vertikalt */
+    padding: 10px;
+
+    /* Tilføjer sticky egenskaber */
+    position: sticky;
+    top: 0; /* Fastlåser headeren øverst på siden */
+    z-index: 1000; /* Sørger for, at den altid er ovenpå andet indhold */
+
+    /* Gør headeren usynlig eller transparent */
+    background-color: rgba(0, 0, 0, 0); /* Fuldt transparent */
+    transition: background-color 0.3s ease; /* Blød overgang, hvis du ønsker en ændring ved scroll */
+  }
+
+  /* Centrerer logoet i midten */
+  .center-logo {
+    flex-grow: 1; /* Tager så meget plads som muligt for at centrere logoet */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Styler højre sektion til Ticket-knappen og Burger-menuen */
+  .right-items {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Tilføjer lidt mellemrum mellem Ticket-button og Burger-menuen */
+  }
+</style>

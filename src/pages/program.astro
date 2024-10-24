@@ -1,0 +1,23 @@
+---
+import Medianav from "../components/Navgation/Medianav.astro";
+import Header from "../components/Sections/Header.astro";
+import Footer from "../components/Sections/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      src="https://kit.fontawesome.com/46717ad018.js"
+      crossorigin="anonymous"></script>
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+    <Medianav />
+    <Footer />
+  </body>
+</html>
