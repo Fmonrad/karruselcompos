@@ -1,2 +1,18 @@
 /* Her skal den overordnet styling forgå */
 
+body {
+  background-color: black;
+  color: white; /* Optional: sets text color to white for better contrast */
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

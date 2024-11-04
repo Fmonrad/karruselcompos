@@ -1,0 +1,171 @@
+---
+import Medianav from "../components/Navgation/Medianav.astro";
+
+const categories = [
+  {
+    name: "THURSDAY",
+    photos: [
+      { src: "/photos/thursday/nandu.webp", text: "NANDU" },
+      { src: "/photos/thursday/minimalene.webp", text: "MINIMALENE" },
+      { src: "/photos/thursday/harty.webp", text: "¡HARTY!" },
+      { src: "/photos/thursday/duhasthiss.webp", text: "DUST MASTA HISS" },
+      { src: "/photos/thursday/benbohmer.webp", text: "BEN BÖHMER" },
+      { src: "/photos/thursday/anetha.webp", text: "ANETHA" },
+    ],
+  },
+  {
+    name: "FRIDAY",
+    photos: [
+      { src: "/photos/friday/djnap.webp", text: "DJ NAP" },
+      { src: "/photos/friday/harrisonhest.webp", text: "HARRISON HEAT " },
+      { src: "/photos/friday/juicyromance.webp", text: "JUICY ROMANCE" },
+      { src: "/photos/friday/marlonhoffstadt.webp", text: "MARLON HOFFSTADT" },
+      { src: "/photos/friday/negirl.webp", text: "N.E. GIRL" },
+      { src: "/photos/friday/oberstbuchner.webp", text: "OBERST & BUCHNER" },
+    ],
+  },
+  {
+    name: "SATURDAY",
+    photos: [
+      { src: "/photos/saturday/fia.webp", text: "FIA" },
+      { src: "/photos/saturday/boogie.webp", text: "BOOGIE ROOKIE" },
+      { src: "/photos/saturday/neneh.webp", text: "NENE H" },
+      { src: "/photos/saturday/sama.webp", text: "SAMA' ABDULHA" },
+      { src: "/photos/saturday/tommiboy.webp", text: "TOMMIBOY" },
+      { src: "/photos/saturday/bfrome.webp", text: "B FROM E" },
+    ],
+  },
+];
+
+console.log(categories);
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dum4mjv.css">
+  <script src="https://kit.fontawesome.com/46717ad018.js" crossorigin="anonymous"></script>
+</head>
+
+<header></header>
+
+<div class="top-photo-container">
+<img src="/public/photos/other/karrusellineup.webp" alt="Top of the page image" class="top-photo" />
+<div class="top-photo-text top-photo-text-1">PROGRAM</div>
+  <div class="top-photo-text top-photo-text-2">KARRUSEL, 22-24 AUGUST<br>
+    COPENHAGEN, REFSHALEØEN
+    </div>
+</div>
+<Medianav />
+
+<main>
+  {categories.map((category) => {
+    return (
+      <section>
+        <h2 class="category-font">{category.name}</h2>
+        <div class="photo-grid">
+          {category.photos.map((photo, index) => {
+            return (
+              <div class="photo-container" key={index}> 
+                <img src={photo.src} alt={category.name} />
+                <div class="photo-text">{photo.text}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    );
+  })}
+</main>
+<footer></footer>
+<style>
+  body {
+    background-color: black;
+    color: white;
+  
+  }
+
+  .top-photo-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  
+
+  /* Positioning each text individually */
+  .top-photo-text-1 {
+    top: 50px;
+   right: 100px;
+    font-family: 'ohm-bold', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 150px;
+    position: absolute;
+  }
+
+  .top-photo-text-2 {
+    top: 190px;
+    right: 20px;
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px;
+    font-family: "neue-haas-unica", sans-serif;
+    position: absolute;
+  }
+
+    .top-photo {
+    width: 100%;
+    max: height 100%; ; /* Adjust based on desired size */
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 16px;
+    padding: 40px;
+  }
+
+  .photo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .photo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .photo-text {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-family: "neue-haas-unica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .category-font {
+    font-family: 'ohm-bold', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 100px;
+  }
+</style>
+
+
+
+

@@ -1,0 +1,91 @@
+---
+import Medianav from "../components/Navgation/Medianav.astro";
+---
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dum4mjv.css">
+    <script src="https://kit.fontawesome.com/46717ad018.js" crossorigin="anonymous"></script>
+    <title>Astro</title>
+  </head>
+  <body>
+    <header></header>
+    <div class="aboutcontainer">
+      <img src="/photos/other/aboutphoto.webp" alt="about karrusel photo" class="aboutphoto">
+      <div class="about-text">ABOUT US</div>
+    </div>
+    <div class="under-photo-text">
+      Karrusel Festival is an annual electronic music festival held in Refshaleøen, Copenhagen. Spanning three days, the festival delivers an immersive experience featuring house, disco, and techno music amidst a unique woodland atmosphere. Its diverse lineup brings together both local and international DJs, offering something for all electronic music lovers.
+      Karrusel is more than just music—festival-goers can explore multiple stages, captivating art installations, and a vibrant, carnival-like atmosphere. This festive energy is reflected in the festival’s name, “Karrusel,” making it a dynamic celebration of creativity and sound.
+    </div>
+    <div class="contact-text">
+      CONTACT <br>
+      info@nusnus.dk
+    </div>
+    <Medianav />
+    <main></main>
+    <footer></footer>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .aboutcontainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .aboutphoto {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'ohm-bold', sans-serif;
+    font-weight: 700;
+    font-size: 150px;
+    text-align: center;
+    padding: 10px;
+  }
+  .under-photo-text {
+     color: white;
+    font-size: 30px;
+    font-family: "neue-haas-unica", sans-serif;
+font-weight: 500;
+font-style: normal;
+    text-align: justify;
+  padding: 60px ;
+}
+
+.contact-text {
+     color: white;
+   font-family: "neue-haas-unica", sans-serif;
+font-weight: 500;
+font-style: normal;
+    text-align: justify;
+  padding: 20px ;
+}
+
+</style>
+
+
+
