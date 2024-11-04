@@ -1,6 +1,9 @@
 ---
 import Medianav from "../components/Navgation/Medianav.astro";
-<<<<<<< HEAD
+import Header from "../components/Sections/Header.astro";
+import Footer from "../components/Sections/Footer.astro";
+import Programhero from "../components/Sections/Programhero.astro";
+
 
 const categories = [
   {
@@ -60,9 +63,10 @@ console.log(categories);
     COPENHAGEN, REFSHALEØEN
     </div>
 </div>
-<Medianav />
+
 
 <main>
+
   {categories.map((category) => {
     return (
       <section>
@@ -80,11 +84,11 @@ console.log(categories);
       </section>
     );
   })}
+    <Header />
+    <Medianav />
+    <Footer />
 </main>
-import Header from "../components/Sections/Header.astro";
-import Footer from "../components/Sections/Footer.astro";
-import Programhero from "../components/Sections/Programhero.astro";
----
+
 
 <html lang="en">
   <head>
@@ -98,11 +102,7 @@ import Programhero from "../components/Sections/Programhero.astro";
     <title>Astro</title>
   </head>
   <body>
-    <Header />
-    <Medianav />
-    <Programhero />
-    <Footer />
-  </body>
+   
 </html>
 <style>
   body {
@@ -192,6 +192,5 @@ import Programhero from "../components/Sections/Programhero.astro";
 
 
 
-=======
 
->>>>>>> a84d812c391be84c4c1ae5afe265d1adea89f8da
+
