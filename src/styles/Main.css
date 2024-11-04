@@ -1,4 +1,5 @@
 /* Her skal den overordnet styling forgå */
+<<<<<<< HEAD
 
 body {
   background-color: black;
@@ -15,4 +16,8 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
+=======
+* {
+    box-sizing: border-box;
+>>>>>>> a84d812c391be84c4c1ae5afe265d1adea89f8da
 }
